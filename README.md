@@ -11,7 +11,7 @@ Quick installation of mining on Android Phones
 - Stable network (WiFi/cellular) is a must for proper installation/operation. Be prepared to troubleshoot and fix them yourself.
 
 ## Installation instructions
-- install andronix follow its instructions
+- install andronix(https://play.google.com/store/apps/details?id=studio.com.techriz.andronix&hl=en_US&gl=US) follow its instructions
 
 ```bash
 curl -o- -k https://raw.githubusercontent.com/Megax-yt/termux-mining-kit/main/install.sh | bash
