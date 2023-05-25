@@ -46,7 +46,7 @@ if [[ "$algo" = "VerusHash" ]]; then
 	./ccminer -a verus -o $pool -u $username -p $password
 fi
 EOF
-
+chmod +x mine.sh
 mkdir xmrig
 cd xmrig
 wget https://raw.githubusercontent.com/Megax-yt/termux-mining-kit/main/xmrig
