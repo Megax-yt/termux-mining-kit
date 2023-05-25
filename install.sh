@@ -15,16 +15,69 @@ cd ~/ccminer
 wget https://github.com/Oink70/Android-Mining/releases/download/v0.0.0-2/ccminer
 wget https://raw.githubusercontent.com/Oink70/Android-Mining/main/config.json
 chmod +x ccminer
-cat << EOF > ~/ccminer/start.sh
-#!/bin/sh
-#exit existing screens with the name CCminer
-screen -S CCminer -X quit
-#wipe any existing (dead) screens)
-screen -wipe
-#create new disconnected session CCminer
-screen -dmS CCminer
-#run the miner
-screen -S CCminer -X stuff "~/ccminer/ccminer -c ~/ccminer/config.json\n"
+cat << EOF > ~/ccminer/mine.sh
+#!/bin/bash
+
+username=""
+password=""
+pool=""
+algo=""
+
+while [[ $# -gt 0 ]]; do
+    key="$1"
+
+    case $key in
+        -u)
+            username="$2"
+            shift
+            ;;
+        -p)
+            password="$2"
+            shift
+            ;;
+        -o)
+            pool="$2"
+            shift
+            ;;
+        -a)
+            algo="$2"
+            if [[ "$algo" != "RandomX" && "$algo" != "VerusHash" ]]; then
+                echo "Invalid algorithm. Only RandomX and VerusHash are currently allowed."
+                exit 1
+            fi
+            shift
+            ;;
+        *)
+            # Unknown option or argument
+            echo "Unknown option or argument: $key"
+            exit 1
+            ;;
+    esac
+
+    shift
+done
+
+if [[ -z "$username" || -z "$password" || -z "$pool" || -z "$algo" ]]; then
+    echo "Username, password, pool, and the algo options are all required."
+    exit 1
+fi
+
+echo "Username: $username"
+echo "Password: $password"
+echo "Pool: $pool"
+echo "Algo: $algo"
+
+if [[ "$algo" = "RandomX"]]; then
+	cd xmrig
+	cd build
+	clear
+	./xmrig -o $pool -u $username -p $password
+fi
+if [[ "$algo" = "VerusHash"]]; then
+	cd ccminer
+	./ccminer -a verus -o $pool -u $username -p $password
+fi
+
 EOF
 
 git clone https://github.com/xmrig/xmrig.git
