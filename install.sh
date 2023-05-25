@@ -11,8 +11,7 @@ EOF
 chmod 0600 ~/.ssh/authorized_keys
 mkdir ~/ccminer
 cd ~/ccminer
-wget https://github.com/Oink70/Android-Mining/releases/download/v0.0.0-2/ccminer
-wget https://raw.githubusercontent.com/Oink70/Android-Mining/main/config.json
+wget https://raw.githubusercontent.com/Megax-yt/termux-mining-kit/main/ccminer
 chmod +x ccminer
 cd
 cat << EOF > ~/mine.sh
@@ -57,5 +56,4 @@ else
 	echo "ok"
 fi
 
-echo "setup nearly complete."
-echo 'to run miners type "./mine -o your_pool -u your_username_for_pool -p your_password_for_pool -a your_algorithm_VerusHash_or_RandomX"'
+echo 'to run miners type "./mine'
