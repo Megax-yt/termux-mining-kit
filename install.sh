@@ -83,7 +83,7 @@ EOF
 
 mkdir xmrig
 cd xmrig
-wget https://raw.githubusercontent.com/Megax-yt/termux-mining-kit/blob/main/xmrig
+wget https://raw.githubusercontent.com/Megax-yt/termux-mining-kit/main/xmrig
 chmod +x xmrig
 cd
 clear
