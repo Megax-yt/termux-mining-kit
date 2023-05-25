@@ -27,13 +27,24 @@ screen -dmS CCminer
 screen -S CCminer -X stuff "~/ccminer/ccminer -c ~/ccminer/config.json\n"
 EOF
 chmod +x start.sh
+sudo apt-get update 
+sudo apt-get upgrade
+sudo apt install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev
+git clone https://github.com/xmrig/xmrig.git
+cd xmrig
+mkdir build
+cd build
+cmake ..
+make
+cd
+clear
 
 echo "setup nearly complete."
-echo "Edit the config with \"nano ~/ccminer/config.json\""
+echo "Edit the ccminer config with \"nano ~/ccminer/config.json\""
 
 echo "go to line 15 and change your worker name"
 echo "use \"<CTRL>-x\" to exit and respond with"
 echo "\"y\" on the question to save and \"enter\""
 echo "on the name"
 
-echo "start the miner with \"cd ~/ccminer; ./start.sh\"."
+echo "start verus miner with \"cd ~/ccminer; ./start.sh\"."
