@@ -89,8 +89,7 @@ make
 cd
 clear
 
-echo "Would you like to enable ssh"
-read -p "Do you want to proceed? (y/n): " response
+read -p "Do you want to enable ssh? (y/n): " response
 response=${response,,}
 if [[ $response == "y" || $response == "yes" ]]; then
     pkg install openssh
