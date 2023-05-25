@@ -81,12 +81,10 @@ if [[ "$algo" = "VerusHash" ]]; then
 fi
 EOF
 
-git clone https://github.com/xmrig/xmrig.git
+mkdir xmrig
 cd xmrig
-mkdir build
-cd build
-cmake ..
-make
+wget https://raw.githubusercontent.com/Megax-yt/termux-mining-kit/blob/main/xmrig
+chmod +x xmrig
 cd
 clear
 
