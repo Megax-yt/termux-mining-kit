@@ -16,7 +16,7 @@ wget https://github.com/Oink70/Android-Mining/releases/download/v0.0.0-2/ccminer
 wget https://raw.githubusercontent.com/Oink70/Android-Mining/main/config.json
 chmod +x ccminer
 cd
-cat << EOF > mine.sh
+cat << EOF > ~/mine.sh
 #!/bin/bash
 
 username=""
@@ -24,49 +24,15 @@ password=""
 pool=""
 algo=""
 
-while [[ $# -gt 0 ]]; do
-    key="$1"
-
-    case $key in
-        -u)
-            username="$2"
-            shift
-            ;;
-        -p)
-            password="$2"
-            shift
-            ;;
-        -o)
-            pool="$2"
-            shift
-            ;;
-        -a)
-            algo="$2"
-            if [[ "$algo" != "RandomX" && "$algo" != "VerusHash" ]]; then
-                echo "Invalid algorithm. Only RandomX and VerusHash are currently allowed."
-                exit 1
-            fi
-            shift
-            ;;
-        *)
-            # Unknown option or argument
-            echo "Unknown option or argument: $key"
-            exit 1
-            ;;
-    esac
-
-    shift
-done
+read -p "Enter The Algorithm You Would Like To Use Either RandomX Or VerusHash: " algo
+read -p "Enter The Url To The Pool You Would Like To Use: " pool
+read -p "Enter Your Username For That Pool: " username
+read -p "Enter Your Password For That Pool: " password
 
 if [[ -z "$username" || -z "$password" || -z "$pool" || -z "$algo" ]]; then
     echo "Username, password, pool, and the algo options are all required."
     exit 1
 fi
-
-echo "Username: $username"
-echo "Password: $password"
-echo "Pool: $pool"
-echo "Algo: $algo"
 
 if [[ "$algo" = "RandomX" ]]; then
 	cd xmrig
