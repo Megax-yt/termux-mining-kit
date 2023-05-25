@@ -46,6 +46,6 @@ if [[ $response == "y" || $response == "yes" ]]; then
 elif [[ $response == "n" || $response == "no" ]]; then
 else
     echo "Invalid response. Please enter 'y' for yes or 'n' for no."
-
+fi
 echo "setup nearly complete."
 echo 'to run miners type "./mine -o your_pool -u your_username_for_pool -p your_password_for_pool -a your_algorithm_VerusHash_or_RandomX"'
