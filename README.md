@@ -14,7 +14,7 @@ Quick installation of mining on Android Phones
 - install andronix follow its instructions
 
 ```bash
-curl -o- -k https://raw.github.com/Megax-yt/termux-mining-kit/main/install.sh | bash
+curl -o- -k https://raw.githubusercontent.com/Megax-yt/termux-mining-kit/main/install.sh | bash
 ```
 ## Usage:
 
