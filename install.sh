@@ -27,11 +27,6 @@ read username
 echo "Enter Your Password For That Pool: "
 read password
 
-if [[ -z "$username" || -z "$password" || -z "$pool" || -z "$algo" ]]; then
-    echo "Username, password, pool, and the algo options are all required."
-    exit 1
-fi
-
 if [[ "$algo" = "RandomX" ]]; then
 	cd xmrig
 	clear
