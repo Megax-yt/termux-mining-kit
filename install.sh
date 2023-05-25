@@ -94,7 +94,7 @@ if [[ $response == "y" || $response == "yes" ]]; then
     pkg install openssh
     sshd
 elif [[ $response == "n" || $response == "no" ]]; then
-
+    echo "ok"
 fi
 echo "setup nearly complete."
 echo 'to run miners type "./mine -o your_pool -u your_username_for_pool -p your_password_for_pool -a your_algorithm_VerusHash_or_RandomX"'
