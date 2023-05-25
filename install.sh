@@ -54,13 +54,13 @@ chmod +x xmrig
 cd
 clear
 
-read -p "Do you want to enable ssh? (y/n) Default(No) : " response
-response=${response,,}
-if [[ $response == "y" || $response == "yes" ]]; then
-    pkg install openssh
-    sshd
-elif [[ $response == "n" || $response == "no" ]]; then
-    echo "ok"
+read -p "Do you want to enable ssh? (y/n) Default(No) : " sshtf
+if [[ $sshtf == "y" || $sshtf == "yes" ]]; then
+	pkg install openssh
+	sshd
+elif [[ $sshtf == "n" || $sshtf == "no" ]]; then
+	echo "ok"
 fi
+
 echo "setup nearly complete."
 echo 'to run miners type "./mine -o your_pool -u your_username_for_pool -p your_password_for_pool -a your_algorithm_VerusHash_or_RandomX"'
