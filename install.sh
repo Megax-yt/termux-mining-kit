@@ -16,7 +16,7 @@ wget https://github.com/Oink70/Android-Mining/releases/download/v0.0.0-2/ccminer
 wget https://raw.githubusercontent.com/Oink70/Android-Mining/main/config.json
 chmod +x ccminer
 cd
-cat << EOF > ~/ccminer/mine.sh
+cat << EOF > mine.sh
 #!/bin/bash
 
 username=""
