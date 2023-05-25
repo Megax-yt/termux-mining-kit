@@ -36,7 +36,6 @@ fi
 
 if [[ "$algo" = "RandomX" ]]; then
 	cd xmrig
-	cd build
 	clear
 	./xmrig -o $pool -u $username -p $password
 fi
