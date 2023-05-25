@@ -40,11 +40,4 @@ cd
 clear
 
 echo "setup nearly complete."
-echo "Edit the ccminer config with \"nano ~/ccminer/config.json\""
-
-echo "go to line 15 and change your worker name"
-echo "use \"<CTRL>-x\" to exit and respond with"
-echo "\"y\" on the question to save and \"enter\""
-echo "on the name"
-
-echo "start verus miner with \"cd ~/ccminer; ./start.sh\"."
+echo 'to run miners type "./mine -o your_pool -u your_username_for_pool -p your_password_for_pool -a your_algorithm_VerusHash_or_RandomX"'
