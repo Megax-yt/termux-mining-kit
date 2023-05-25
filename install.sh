@@ -15,6 +15,7 @@ cd ~/ccminer
 wget https://github.com/Oink70/Android-Mining/releases/download/v0.0.0-2/ccminer
 wget https://raw.githubusercontent.com/Oink70/Android-Mining/main/config.json
 chmod +x ccminer
+cd
 cat << EOF > ~/ccminer/mine.sh
 #!/bin/bash
 
@@ -67,17 +68,17 @@ echo "Password: $password"
 echo "Pool: $pool"
 echo "Algo: $algo"
 
-if [[ "$algo" = "RandomX"]]; then
+if [[ "$algo" = "RandomX" ]]; then
 	cd xmrig
 	cd build
 	clear
 	./xmrig -o $pool -u $username -p $password
 fi
-if [[ "$algo" = "VerusHash"]]; then
+if [[ "$algo" = "VerusHash" ]]; then
 	cd ccminer
+	clear
 	./ccminer -a verus -o $pool -u $username -p $password
 fi
-
 EOF
 
 git clone https://github.com/xmrig/xmrig.git
