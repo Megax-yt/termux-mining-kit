@@ -16,8 +16,7 @@ Quick installation of mining on Android Phones
 ```bash
 curl -o- -k https://raw.githubusercontent.com/Megax-yt/termux-mining-kit/main/install.sh | bash
 ```
-## Usage:
+## Usage
 ```bash
 ./mine.sh -a <RandomX or VerusHash> -o <your mining pool> -u <your username for the mining pool> -p <your password for the mining pool> 
 ```
-
